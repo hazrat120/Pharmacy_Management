@@ -18,3 +18,4 @@ Route::get('/custommer', [UserController::class, 'custommerName']);
 Route::get("/role/{name}", [UserController::class, 'role']);
 Route::get('name/{Name}', [UserController::class, 'getName']);
 Route::get('/user', [UserController::class, 'user']);
+Route::get('/header', [UserController::class, 'header']);

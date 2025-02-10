@@ -27,4 +27,8 @@ class UserController extends Controller
     function user(){
         return view('user');
     }
+
+    function header(){
+        return view('components.header');
+    }
 }
