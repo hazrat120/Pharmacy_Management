@@ -9,5 +9,7 @@
 </head>
 <body>
     <h1>Welcome to Laravel</h1>
+    @include('components.header')
+    @include('pages.home')
 </body>
 </html>
