@@ -12,7 +12,7 @@ class UserController extends Controller
         return view('getuser', ['name' => $name]);
     }
  */
-    function custommerName(){
+/*     function custommerName(){
         return "Al-amin";
     }
 
@@ -49,5 +49,9 @@ class UserController extends Controller
         $userName = ['Amin', 'Rafi', 'Rabbi', 'Hazrat', 'Munna', 'Mustafize', 'Ismail', "Razib"];
         $name = "Hazrat Ali";
         return view('getUser', ['name' =>$name, "userName" => $userName]);
+    }
+ */
+    function home(){
+        return view('home');
     }
 }
