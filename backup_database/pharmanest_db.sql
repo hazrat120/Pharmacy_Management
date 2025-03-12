@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2025 at 08:59 PM
+-- Generation Time: Mar 11, 2025 at 05:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `fname`, `lname`, `email`, `password`, `phone`, `role`, `avatar`) VALUES
-(1, 'Rajib', 'Hossain', 'rajib@gmail.com', 'rajib', '01752477208', 'admin', NULL);
+(1, 'Hazrat', 'Ali', 'hazrat.aligmail.com', '123456', '01752477208', 'admin', NULL),
+(2, 'Rajib', 'Hossan', 'rajib.hosain@gmail.com', '123456', '01646577853', 'admmin', NULL),
+(3, 'Munna', 'Kaku', 'munna@gmail.com', '123456', '01646577853', 'user', NULL);
 
 -- --------------------------------------------------------
 
@@ -96,8 +98,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `customer_name`, `phone`, `email`, `home_address`, `identifier_name`, `identifier_phone`, `status`) VALUES
-(1, ' Rajib Hossain', '01752477208', 'rajib@gmail.com', '532 west shewrapa mirpur dhaka', 'Rakib Hossain', '01828896738', 1),
-(2, 'Anonymous', 'none', 'none', 'none', 'none', 'none', 0);
+(1, 'Hazrat Ali', '01752477587', 'hazrat.ali@gmail.com', '532 Mirpur dhaka', 'rajib', '018288967987', 1),
+(2, 'Rajib', '01646577852', 'rajib.hosan@gmail.com', 'Mirpur 10', 'rajib', '018288967987', 2);
 
 -- --------------------------------------------------------
 
@@ -169,7 +171,17 @@ INSERT INTO `medicines` (`id`, `m_name`, `shelf_no`, `manufacturer`, `m_type`, `
 (13, 'Azithrocin', 'A', 'Square Pharmaceuticals Ltd.', 'Tablet', 'Azithromycin', ' Md Rajib', 1, 'uploads/images.jpeg'),
 (15, 'Neotack', 'N', 'Incepta Pharmaceuticals Ltd.', 'Tablet', 'Omeprazole + Domperidone', ' Ali ', 1, 'uploads/esoral.jpg'),
 (16, 'Ibuspray', 'I', 'Square Pharmaceuticals Ltd.', 'Tablet', 'Ibuprofen', ' Md Sipon Ali', 1, 'uploads/esoral.jpg'),
-(17, 'Sertral', 'S', 'Incepta Pharmaceuticals Ltd.', 'Tablet', 'Sertraline', ' Ali ', 1, 'uploads/sertal.jpg');
+(17, 'Sertral', 'S', 'Incepta Pharmaceuticals Ltd.', 'Tablet', 'Sertraline', ' Ali ', 1, 'uploads/sertal.jpg'),
+(18, 'Seclo', 'S', 'Square Pharmaceuticals Ltd.', 'Capsule', 'Omeprazole', 'Md Karim', 1, 'uploads/seclo.jpg'),
+(19, 'Losectil', 'L', 'Eskayef Pharmaceuticals Ltd.', 'Tablet', 'Omeprazole', 'Md Rahman', 1, 'uploads/losectil.jpg'),
+(20, 'Maxpro', 'M', 'Renata Limited', 'Tablet', 'Esomeprazole', 'Md Hassan', 1, 'uploads/maxpro.jpg'),
+(21, 'Zimax', 'Z', 'Healthcare Pharmaceuticals Ltd.', 'Tablet', 'Azithromycin', 'Md Alam', 1, 'uploads/zimax.jpg'),
+(22, 'Filmet', 'F', 'Opsonin Pharma Limited', 'Tablet', 'Metronidazole', 'Md Hossain', 1, 'uploads/filmet.jpg'),
+(23, 'Calbo-D', 'C', 'Drug International Ltd.', 'Tablet', 'Calcium + Vitamin D3', 'Md Islam', 1, 'uploads/calbo-d.jpg'),
+(24, 'Ace', 'A', 'Square Pharmaceuticals Ltd.', 'Tablet', 'Paracetamol', 'Md Ahmed', 1, 'uploads/ace.jpg'),
+(25, 'Ciprocin', 'C', 'Square Pharmaceuticals Ltd.', 'Tablet', 'Ciprofloxacin', 'Md Uddin', 1, 'uploads/ciprocin.jpg'),
+(26, 'Esonix', 'E', 'Beximco Pharmaceuticals Ltd.', 'Capsule', 'Esomeprazole', 'Md Khan', 1, 'uploads/esonix.jpg'),
+(27, 'Tufnil', 'T', 'ACME Laboratories Ltd.', 'Tablet', 'Paracetamol', 'Md Siddique', 1, 'uploads/tufnil.jpg');
 
 -- --------------------------------------------------------
 
@@ -197,7 +209,17 @@ INSERT INTO `medicine_stock` (`id`, `batch_no`, `medicine_id`, `quantity`, `supp
 (19, 'AME321', 10, 270, 12.00, 7.00, '2027-07-19', 42811653),
 (20, 'AMO342', 11, 390, 5.00, 15.00, '2026-07-19', 42811653),
 (21, 'AZI345', 13, 380, 15.00, 16.00, '2027-11-22', 45783436),
-(22, 'ba234', 15, 0, 12.00, 15.00, '2028-11-26', 32077073);
+(22, 'ba234', 15, 0, 12.00, 15.00, '2028-11-26', 32077073),
+(23, 'SEC456', 18, 500, 8.50, 12.00, '2027-06-15', 67891234),
+(24, 'LOS789', 19, 300, 7.00, 10.00, '2027-08-20', 78912345),
+(25, 'MAX234', 20, 400, 9.50, 14.00, '2027-09-30', 89123456),
+(26, 'ZIM567', 21, 250, 12.50, 18.00, '2027-10-25', 90123467),
+(27, 'FIL890', 22, 600, 4.50, 8.00, '2027-12-15', 12345678),
+(28, 'CAL123', 23, 450, 6.00, 9.50, '2028-01-20', 23456789),
+(29, 'ACE456', 24, 700, 2.00, 4.00, '2028-02-28', 34567890),
+(30, 'CIP789', 25, 350, 11.00, 16.50, '2028-03-15', 45678901),
+(31, 'ESO012', 26, 280, 13.50, 19.00, '2028-04-25', 56789012),
+(32, 'TUF345', 27, 550, 3.50, 6.50, '2028-05-30', 67890123);
 
 -- --------------------------------------------------------
 
@@ -625,7 +647,7 @@ ALTER TABLE `unit`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -655,13 +677,13 @@ ALTER TABLE `manager`
 -- AUTO_INCREMENT for table `medicines`
 --
 ALTER TABLE `medicines`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `medicine_stock`
 --
 ALTER TABLE `medicine_stock`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `medicine_type`

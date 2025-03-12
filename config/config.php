@@ -5,7 +5,7 @@ $localhost = "localhost";
 $username = "root";
 $password = "";
 $dbname = "pharmanest_db";
-$store_url = "http://localhost/PHP/pharmanest-project/";
+$store_url = "http://localhost/PHP%20Project/Pharmacy_Management/";
 // db connection
 $db = new mysqli($localhost, $username, $password, $dbname);
 // check connection
