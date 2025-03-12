@@ -9,12 +9,11 @@
       <!-- header part end -->
 
 
-
         <!--Sidebar part start-->
         <?php 
        include("./pages/common_pages/sidebar.php");
        ?>
-        <!--Sidebar part end-->
+      <!--Sidebar part end-->
         
       <!-- main part start  -->
 

@@ -6,93 +6,144 @@
         <h4 class="text-uppercase">Dashboard</h4>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xl-4 col-sm-6 col-12 mb-4"> 
-        <div class="card">
-          <div class="card-content">
-            <div class="card-body">
-              <div class="media d-flex justify-content-around">
-                <div class="align-self-center">
-                <i class="bi bi-cash-coin text-info-emphasis fs-1"></i><br>
-                <a class="text-danger-emphasis" href="sell_list.php">show details</a>
-                </div>
-                <div class="media-body text-right">
-                  <?php
-                            $amount =0;
-                            $selllist = $db->query("SELECT * FROM total_sell");
-                            while (list($_id, $singleSell,$date) = $selllist->fetch_row()) {
-                               $amount = $amount + (int)$singleSell;
-                            }
-                  ?>
-                  <h5 class="fw-semibold">Total Sell</h5>
-                  <h6 class="text-info-emphasis fw-bold"><?php echo$amount;?> <span> taka</span></h6>
-                </div>
+      <div class="row">
+      <!-- Sales Overview Card -->
+      <div class="col-xl-4 col-sm-6 col-12 mb-4 px-3">
+          <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-all-hover">
+              <div class="card-header bg-info-subtle border-0 py-3">
+                  <div class="d-flex align-items-center">
+                      <div class="bg-info text-white d-flex align-items-center justify-content-center" 
+                          style="width: 40px; height: 40px; border-radius: 50%;">
+                          <i class="bi bi-cash-coin fs-5"></i>
+                      </div>
+                      <h6 class="mb-0 text-info-emphasis fw-semibold ms-2">Sales Overview</h6>
+                  </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-sm-6 col-12 mb-4">
-      <div class="card">
-      <i class=""></i>
-          <div class="card-content">
-            <div class="card-body">
-              <div class="media d-flex justify-content-around">
-                <div class="align-self-center">
-                <i class="bi bi-cash-coin text-info-emphasis fs-1"></i><br>
-                <a class="text-danger-emphasis" href="purchase_list.php">show details</a>
-                </div>
-                <div class="media-body text-right">
-                <?php
-                            $amount2 =0;
-                            $purchaselist = $db->query("SELECT * FROM total_purchase");
-                            while (list($_id, $singleSell,$date) =  $purchaselist->fetch_row()) {
-                               $amount2 = $amount2 + (int)$singleSell;
-                               
-                            }
-                        ?>
-                  <h5 class="fw-semibold">Total Purchase</h5>
-                  <h6 class="text-info-emphasis fw-bold"><?php echo$amount2;?> <span> taka</span></h6>
-                </div>
+              
+              <div class="card-body pt-0">
+                  <div class="d-flex justify-content-between align-items-end">
+                      <div>
+                          <h2 class="text-info-emphasis fw-bold mb-0">6,990</h2>
+                          <span class="text-muted small">Total taka</span>
+                      </div>
+                      <div class="text-end">
+                          <div class="badge bg-success-subtle text-success-emphasis">
+                              <i class="bi bi-arrow-up-short"></i> 12.5%
+                          </div>
+                          <p class="text-muted small mb-0 mt-1">Last 7 days</p>
+                      </div>
+                  </div>
+                  <div class="progress mt-4" style="height: 6px;">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 75%"></div>
+                  </div>
               </div>
-            </div>
+              <div class="card-footer bg-transparent border-0 pt-0">
+                  <a href="sell_list.php" 
+                    class="btn btn-sm btn-info w-100 d-flex justify-content-between align-items-center">
+                      <span>View Details</span>
+                      <i class="bi bi-arrow-right-short fs-5"></i>
+                  </a>
+              </div>
           </div>
-        </div>
       </div>
 
-      <div class="col-xl-4 col-sm-6 col-12">
-      <div class="card">
-          <div class="card-content">
-            <div class="card-body">
-              <div class="media d-flex justify-content-around">
-                <div class="align-self-center">
-                <i class="bi bi-calendar3 text-info-emphasis fs-1"></i><br>
-                <a class="text-danger-emphasis" href="today_sell_list.php">show details</a>
-                </div>
-                <div class="media-body text-right">
-                  <?php 
-                  // Get today's date
-                  $today = date('Y-m-d');
-
-                  $todayAmount = 0;
-                  $selllist = $db->query("SELECT * FROM total_sell WHERE date = '$today'");
-
-                  while (list($_id, $singleSell, $date) = $selllist->fetch_row()) {
-                      $todayAmount += (int)$singleSell; 
-                  }
-                  ?>
-                  <h5 class="fw-semibold">Today Sell</h5>
-                  <h6 class="text-info-emphasis fw-bold">
-                      <?php echo $todayAmount; ?> <span>taka</span>
-                  </h6>
+      <!-- Total Purchase Card -->
+      <div class="col-xl-4 col-sm-6 col-12 mb-4 px-3">
+          <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-all-hover">
+              <div class="card-header bg-info-subtle border-0 py-3">
+                  <div class="d-flex align-items-center">
+                      <div class="bg-info text-white d-flex align-items-center justify-content-center" 
+                          style="width: 40px; height: 40px; border-radius: 50%;">
+                          <i class="bi bi-cash-coin fs-5"></i>
+                      </div>
+                      <h6 class="mb-0 text-info-emphasis fw-semibold ms-2">Total Purchase</h6>
+                  </div>
               </div>
+              <div class="card-body pt-0">
+                  <div class="d-flex justify-content-between align-items-end">
+                      <div>
+                          <h2 class="text-info-emphasis fw-bold mb-0">
+                              <?php
+                              $amount2 = 0;
+                              $purchaselist = $db->query("SELECT * FROM total_purchase");
+                              while(list($_id, $singleSell, $date) = $purchaselist->fetch_row()) {
+                                  $amount2 += (int)$singleSell;
+                              }
+                              echo $amount2;
+                              ?>
+                          </h2>
+                          <span class="text-muted small">Total taka</span>
+                      </div>
+                      <div class="text-end">
+                          <div class="badge bg-success-subtle text-success-emphasis">
+                              <i class="bi bi-arrow-up-short"></i> N/A
+                          </div>
+                          <p class="text-muted small mb-0 mt-1">All Time</p>
+                      </div>
+                  </div>
+                  <div class="progress mt-4" style="height: 6px;">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 75%"></div>
+                  </div>
               </div>
-            </div>
+              <div class="card-footer bg-transparent border-0 pt-0">
+                  <a href="purchase_list.php" 
+                    class="btn btn-sm btn-info w-100 d-flex justify-content-between align-items-center">
+                      <span>View Details</span>
+                      <i class="bi bi-arrow-right-short fs-5"></i>
+                  </a>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
-  
+
+      <!-- Today's Sales Card -->
+      <div class="col-xl-4 col-sm-6 col-12 mb-4 px-3">
+          <div class="card h-100 border-0 shadow-sm hover-shadow-lg transition-all-hover">
+              <div class="card-header bg-info-subtle border-0 py-3">
+                  <div class="d-flex align-items-center">
+                      <div class="bg-info text-white d-flex align-items-center justify-content-center" 
+                          style="width: 40px; height: 40px; border-radius: 50%;">
+                          <i class="bi bi-calendar3 fs-5"></i>
+                      </div>
+                      <h6 class="mb-0 text-info-emphasis fw-semibold ms-2">Today's Sales</h6>
+                  </div>
+              </div>
+              <div class="card-body pt-0">
+                  <div class="d-flex justify-content-between align-items-end">
+                      <div>
+                          <h2 class="text-info-emphasis fw-bold mb-0">
+                              <?php
+                              $today = date('Y-m-d');
+                              $todayAmount = 0;
+                              $selllist = $db->query("SELECT * FROM total_sell WHERE date = '$today'");
+                              while(list($_id, $singleSell, $date) = $selllist->fetch_row()) {
+                                  $todayAmount += (int)$singleSell;
+                              }
+                              echo $todayAmount;
+                              ?>
+                          </h2>
+                          <span class="text-muted small">Today's taka</span>
+                      </div>
+                      <div class="text-end">
+                          <div class="badge bg-success-subtle text-success-emphasis">
+                              <i class="bi bi-arrow-up-short"></i> N/A
+                          </div>
+                          <p class="text-muted small mb-0 mt-1">Daily Update</p>
+                      </div>
+                  </div>
+                  <div class="progress mt-4" style="height: 6px;">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 75%"></div>
+                  </div>
+              </div>
+              <div class="card-footer bg-transparent border-0 pt-0">
+                  <a href="today_sell_list.php" 
+                    class="btn btn-sm btn-info w-100 d-flex justify-content-between align-items-center">
+                      <span>View Details</span>
+                      <i class="bi bi-arrow-right-short fs-5"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+      </div>
   </section>
 
   <section>
