@@ -135,16 +135,16 @@ if ($stmt = $db->prepare($sql)) {
              </div>";
         $counter++;
     }
-} else {
-    echo "
-      <p class='text-center text-muted bg-light py-3 rounded border'>
-        <i class='bi bi-info-circle me-2'></i> No purchase available at the moment.
-      </p>";
-}
-?>
+    } else {
+        echo "
+        <p class='text-center text-muted bg-light py-3 rounded border'>
+            <i class='bi bi-info-circle me-2'></i> No purchase available at the moment.
+        </p>";
+    }
+    ?>
 
-            </tbody>
-        </table>
+    </tbody>
+</table>
 
 
 
